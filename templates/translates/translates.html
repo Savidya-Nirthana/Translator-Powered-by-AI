@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      {% csrf_token %}
+      <textarea name="data" placeholder="Enter the text"></textarea><br /><br />
+      <label for="input">Translate from: </label>
+      <select id="input_langs" name="input_langs">
+        <option value="sinhala">Sinhala</option>
+        <option value="english">English</option>
+        <option value="german">German</option>
+        <option value="spain">Spain</option>
+      </select>
+      <br />
+      <br />
+      <label for="">Translate for: </label>
+      <select id="input_langs" name="output_langs">
+        <option value="sinhala">Sinhala</option>
+        <option value="english">English</option>
+        <option value="german">German</option>
+        <option value="spain">Spain</option>
+      </select>
+      <br />
+      <br />
+      <input type="submit" value="Translate" />
+    </form>
+    {% if translated %}
+    <h1>{{ translated }}</h1>
+    {% endif %}
+  </body>
+</html>
