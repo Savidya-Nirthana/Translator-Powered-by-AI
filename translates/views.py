@@ -5,7 +5,7 @@ from langchain_core.prompts import ChatPromptTemplate
 
 # Create your views here.
 def translate(translate_from, translate_to, data):
-    os.environ['GROQ_API_KEY'] = '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'
+    os.environ['GROQ_API_KEY'] = 'enter your groq api key'
     llm = ChatGroq(
         model="llama-3.1-70b-versatile",
         temperature=0,
